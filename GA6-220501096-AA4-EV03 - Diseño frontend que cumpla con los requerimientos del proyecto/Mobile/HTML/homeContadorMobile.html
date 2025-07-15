@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvenPro - AdministradorMobile</title>
+    <link rel="stylesheet" href="../CSS/rolesmobile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="logo-header">
+        <img src="../HTML/imagenes/Invenprologo.png" alt="InvenPro Logo" class="logo-img" />
+    </header>
+
+    <main class="main-container">
+
+        <!-- Sección de bienvenida -->
+        <section id="inicio" class="bienvenida">
+            <h1>¡BIENVENIDO!</h1><br>
+            <p>NOS ALEGRA QUE ESTÉS AQUÍ :D</p>
+        </section>
+
+        <!-- REGISTRAR CONTEO -->
+        <section id="registrar-conteo" class="seccion oculto">
+            <h2>Registrar Conteo</h2>
+            <div class="input-icon-registrar">
+                HOY DD/MM/YYYY TIENES ASIGNADO LOS SIGUIENTES CONTEOS:
+            </div>
+            <div>
+                <p>id toma:<br>Referencia:<br>Descripcion:<br>status<br>
+                <div><button class="sub-btn" data-section="conteo">Ingresar</button></div>
+
+            </div>
+            <div>
+                <p>id toma:<br>Referencia:<br>Descripcion:<br>status<br>
+                <div><button class="sub-btn" data-section="conteo"> Ingresar</button></div>
+
+            </div>
+        </section>
+
+        <!-- conteo -->
+        <section id="conteo" class="seccion oculto">
+            <h2>Conteo:</h2>
+            <div class="input-icon-registrar">
+                <div class="input-icon"><input type="text" placeholder="Cantidad" /></div><br>
+                <div class="input-icon"><input type="text" placeholder="Comentarios" /></div>
+            </div>
+            <div>
+                <button class="sub-btn" onclick="registrarConteo()">Registrar conteo</button>
+            </div>
+        </section>
+
+
+        <!--Menu inferior de iconos-->
+        <nav class="menu-inferior">
+            <button data-section="inicio" class="activo">
+                <img src="../HTML/imagenes/Inicio.svg" alt="Inicio" />
+            </button>
+            <button class="submenu-toggle" data-submenu="registrar">
+                <img src="../HTML/imagenes/Conteo.svg" alt="registrar" />
+            </button>
+
+        </nav>
+
+        <!--Menu inferior de subménus-->
+        <div id="submenu-registrar" class="submenu oculto">
+            <button data-section="registrar-conteo">Resgistrar Conteo</button>
+        </div>
+
+        <script src="../JS/contadorMobile.js"></script>
+</body>
+
+</html>

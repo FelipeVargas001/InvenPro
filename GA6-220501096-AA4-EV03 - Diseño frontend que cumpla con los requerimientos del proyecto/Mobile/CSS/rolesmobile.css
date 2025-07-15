@@ -1,0 +1,198 @@
+* {
+  font-family: 'Kode Mono', monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+.logo-header {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.logo-img {
+  height: 60px;
+}
+
+.main-container {
+  width: 90%;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.bienvenida h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.bienvenida p {
+  font-size: 1.1rem;
+  margin: 0.25rem 0;
+}
+
+.seccion {
+  margin-top: 2rem;
+}
+
+.seccion h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.sub-btn {
+  background-color: #123aff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.sub-btn-red {
+  background-color: #FF0000;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.menu-inferior {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.menu-inferior button {
+  background: none;
+  border: none;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #000;
+}
+
+.menu-inferior button img {
+  height: 48px;
+  margin-bottom: 4px;
+}
+
+.menu-inferior button.activo{
+  font-weight: bold;
+  color: #123aff;
+}
+
+.submenu {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  width: 100%;
+  background: #f8f8f8;
+  padding: 20px 20px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+  z-index: 900;
+  text-align: center;
+}
+
+.submenu button {
+  display: wrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 45%;
+  margin: 20px 2.5%;
+  padding: 25px 25px;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(145deg, #123aff, #a5abd8);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submenu button:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.activa {
+  display: block !important;
+}
+
+.oculto {
+  display: none;
+}
+
+.input-icon,
+.input-icon-registrar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-icon input {
+  flex: 1;
+  padding: 12px 36px 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.icono-final {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icono-final img {
+  height: 20px;
+  width: 20px;
+}
+.tabla-usuario {
+  width: 100%;
+  max-width: 350px;
+  margin: 1rem auto;
+  overflow-x: auto;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.tabla-usuario table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.imagen-calendario {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 6px;
+}

@@ -1,0 +1,162 @@
+* {
+  font-family: 'Kode Mono', monospace !important;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Kode Mono', monospace;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.mobile-wrapper {
+  width: 90%;
+  max-width: 360px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.logo-mobile img {
+  height: 80px;
+  margin-bottom: 16px;
+}
+
+.form-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-mobile label {
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.form-mobile input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.error-message {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.error-message.active {
+  display: flex;
+}
+
+.error-message > div {
+  background: #fff;
+  padding: 24px 16px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.btn-mobile {
+  background-color: #4058F5;
+  margin: 2px;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  
+}
+
+.btn-mobile:hover {
+  background-color: #2e3ebd;
+}
+
+.link-mobile {
+  margin-top: 10px;
+}
+
+.link-mobile a {
+  font-size: 0.85rem;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.link-mobile a:hover {
+  text-decoration: underline;
+}
+
+.modal-mobile {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-mobile.active {
+  display: flex;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 24px 16px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.modal-box button {
+  background: #4058F5;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.modal-box .cancelar {
+  background: #aaa;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.modal-box .cancelar:hover {
+  background: #888;
+}

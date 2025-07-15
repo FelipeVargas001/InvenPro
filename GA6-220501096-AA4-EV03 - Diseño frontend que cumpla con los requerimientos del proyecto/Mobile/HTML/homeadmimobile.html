@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvenPro - AdministradorMobile</title>
+  <link rel="stylesheet" href="../CSS/rolesmobile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="logo-header">
+    <img src="../HTML/imagenes/Invenprologo.png" alt="InvenPro Logo" class="logo-img" />
+  </header>
+
+  <main class="main-container">
+
+    <!-- Sección de bienvenida -->
+    <section id="inicio" class="bienvenida">
+      <h1>¡BIENVENIDO!</h1><br>
+      <p>NOS ALEGRA QUE ESTÉS AQUÍ :D</p>
+    </section>
+
+<!-- CREAR USUARIO -->
+<section id="crear-usuario" class="seccion oculto">
+  <h2>Crear Usuario</h2>
+  <div class="input-icon"><input type="text" placeholder="Nombres" /></div>
+  <div class="input-icon"><input type="text" placeholder="Apellidos" /></div>
+  <div class="input-icon"><input type="number" placeholder="NIT ▼" /></div>
+  <div class="input-icon"><input type="email" placeholder="Correo electrónico" required /></div>
+  <div class="botones">
+    <button class="opcion" onclick="seleccionar(this)">Usuario Contador</button>
+    <button class="opcion" onclick="seleccionar(this)">Usuario Jefe</button>
+  </div>
+  <button class="sub-btn" onclick="enviarRegistrar()">Registrar</button>
+</section>
+
+<!-- CONSULTAR USUARIO -->
+<section id="consultar-usuario" class="seccion oculto">
+  <h2>Consultar Usuario</h2>
+  <div class="input-icon"><input type="search" placeholder="Nombres" /></div>
+  <div class="input-icon"><input type="search" placeholder="Apellidos" /></div>
+  <div class="input-icon"><input type="search" placeholder="NIT ▼" /></div>
+  <div class="input-icon"><input type="search" placeholder="Correo electrónico" required /></div>
+  <div class="tabla-usuario">
+    <table>
+      <thead>
+        <tr><th>id|| </th><th>Nombres|| </th><th>Apellidos|| </th><th>NIT|| </th><th>Correo|| <th><th>Rol|| </th></tr>
+      </thead>
+    </table>
+  </div>
+</section>
+
+<!-- MODIFICAR USUARIO -->
+<section id="modificar-usuario" class="seccion oculto">
+  <h2>Modificar Usuario</h2>
+  <!-- mismos campos que consultar usuario -->
+  <div class="input-icon"><input type="search" placeholder="Nombres" /></span></div>
+  <div class="input-icon"><input type="search" placeholder="Apellidos" /></span></div>
+  <div class="input-icon"><input type="search" placeholder="NIT ▼" /></span></div>
+  <div class="input-icon"><input type="search" placeholder="Correo electrónico" /></div>
+  <button class="sub-btn">Guardar cambios</button>
+</section>
+
+<!-- ELIMINAR USUARIO -->
+<section id="eliminar-usuario" class="seccion oculto">
+  <h2>Eliminar Usuario</h2>
+  <div class="input-icon"><input type="search" placeholder="NIT" /></div>
+  <div class="eliminar-usuario-info">
+    <p>id:<br>Nombres:<br>Apellidos:<br>NIT:<br>Correo:<br>Rol:</p>
+  </div>
+  <button class="sub-btn-red" onclick="eliminarRegistro()">Eliminar</button>
+</section>
+
+<!-- CALENDARIO MES -->
+<section id="calendario-mes" class="seccion oculto">
+  <h2>Calendario del Mes</h2>
+  <img src="imagenes/CalendarioMes.png" class="imagen-calendario" />
+</section>
+
+<!-- ASIGNAR CONTEO -->
+<section id="asignar-conteo" class="seccion oculto">
+  <h2>Asignar Conteo</h2>
+  <div class="input-icon-asignar">
+    <span class="icono-final"><img src="imagenes/regresar.svg" /></span>
+    DÍA: ______ MES: ______ AÑO: ______
+  </div>
+  <div class="asignar-conteo-form">
+    <div class="input-icon"><input type="number" placeholder="Producto ▼" /></div>
+    <div class="input-icon"><input type="text" placeholder="Frecuencia ▼" /></div>
+    <div class="input-icon"><input type="text" placeholder="Contador ▼" /></div>
+    <button class="sub-btn" onclick="asignarConteo()">Asignar conteo</button>
+  </div>
+</section>
+
+<!-- CREAR INFORME -->
+<section id="crear-informe" class="seccion oculto">
+  <h2>Crear Informe</h2>
+  <div class="input-icon"> <input type="text" placeholder="Tipo de informe ▼" /></div>
+  <div class="input-icon"><input type="date" placeholder="Fecha inicial" /></div>
+   <div class="input-icon"><input type="date" placeholder="Fecha final" /></div>
+   <div class="input-icon"><input type="text" placeholder="Nombre del informe" /></div>
+  <button class="sub-btn">Crear informe</button>
+</section>
+
+<!-- CONSULTAR INFORME -->
+<section id="consultar-informe" class="seccion oculto">
+  <h2>Consultar Informe</h2>
+  <div class="consultar-informe-info">
+    <p>id informe:<br>Tipo:<br>Nombre:<br>Fecha:<br></p>
+    <button class="sub-btn-red" onclick="eliminarRegistro()">Eliminar</button>
+    <button class="sub-btn" onclick="cerrarConfirmacion()">Editar</button>
+  </div>
+</section>   
+  </main>
+
+  <!--Menu inferior de iconos-->
+  <nav class="menu-inferior">
+    <button data-section="inicio" class="activo">
+      <img src="../HTML/imagenes/Inicio.svg" alt="Inicio" />
+    </button>
+    <button class="submenu-toggle" data-submenu="usuarios">
+      <img src="../HTML/imagenes/Usuarios.svg" alt="Usuarios" />
+    </button>
+    <button class="submenu-toggle" data-submenu="inventario">
+      <img src="../HTML/imagenes/Calendario.svg" alt="Inventario" />
+    </button>
+    <button class="submenu-toggle" data-submenu="informes">
+      <img src="../HTML/imagenes/Informe.svg" alt="Informes" />
+    </button>
+  </nav>
+
+  <!--Menu inferior de subménus-->
+  <div id="submenu-usuarios" class="submenu oculto">
+    <button data-section="crear-usuario">Crear</button>
+    <button data-section="consultar-usuario">Consultar</button>
+    <button data-section="modificar-usuario">Modificar</button>
+    <button data-section="eliminar-usuario">Eliminar</button>
+  </div>
+
+  <div id="submenu-inventario" class="submenu oculto">
+    <button data-section="calendario-mes">Calendario</button>
+    <button data-section="asignar-conteo">Asignar Conteo</button>
+  </div>
+
+  <div id="submenu-informes" class="submenu oculto">
+    <button data-section="crear-informe">Crear</button>
+    <button data-section="consultar-informe">Consultar</button>
+  </div>
+
+  <script src="../JS/admimobile.js"></script>
+</body>
+</html>

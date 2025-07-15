@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvenPro - JefeMobile</title>
+  <link rel="stylesheet" href="../CSS/rolesmobile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="logo-header">
+    <img src="../HTML/imagenes/Invenprologo.png" alt="InvenPro Logo" class="logo-img" />
+  </header>
+
+  <main class="main-container">
+
+    <!-- Sección de bienvenida -->
+    <section id="inicio" class="bienvenida">
+      <h1>¡BIENVENIDO!</h1><br>
+      <p>NOS ALEGRA QUE ESTÉS AQUÍ :D</p>
+    </section>
+
+<!-- CREAR INFORME -->
+<section id="crear-informe" class="seccion oculto">
+  <h2>Crear Informe</h2>
+  <div class="input-icon"> <input type="text" placeholder="Tipo de informe ▼" /></div>
+  <div class="input-icon"><input type="date" placeholder="Fecha inicial" /></div>
+   <div class="input-icon"><input type="date" placeholder="Fecha final" /></div>
+   <div class="input-icon"><input type="text" placeholder="Nombre del informe" /></div>
+  <button class="sub-btn">Crear informe</button>
+</section>
+
+<!-- CONSULTAR INFORME -->
+<section id="consultar-informe" class="seccion oculto">
+  <h2>Consultar Informe</h2>
+  <div class="consultar-informe-info">
+    <p>id informe:<br>Tipo:<br>Nombre:<br>Fecha:<br></p>
+    <button class="sub-btn-red" onclick="eliminarRegistro()">Eliminar</button>
+    <button class="sub-btn" onclick="cerrarConfirmacion()">Editar</button>
+  </div>
+</section>   
+  </main>
+
+  <!--Menu inferior de iconos-->
+  <nav class="menu-inferior">
+    <button data-section="inicio" class="activo">
+      <img src="../HTML/imagenes/Inicio.svg" alt="Inicio" />
+    </button>
+    <button class="submenu-toggle" data-submenu="informes">
+      <img src="../HTML/imagenes/Informe.svg" alt="Informes" />
+    </button>
+  </nav>
+
+  <!--Menu inferior de subménus-->
+  <div id="submenu-informes" class="submenu oculto">
+    <button data-section="crear-informe">Crear</button>
+    <button data-section="consultar-informe">Consultar</button>
+  </div>
+
+  <script src="../JS/jefeMobile.js"></script>
+</body>
+</html>

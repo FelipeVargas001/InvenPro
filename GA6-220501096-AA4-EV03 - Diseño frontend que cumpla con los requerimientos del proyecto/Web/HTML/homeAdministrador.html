@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvenPro - HomeAdmnistrador</title>
+  <link rel="stylesheet" href="../CSS/roles.css" />
+  <!--Se importa la fuente Kode Kono-->
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="inicio-header"> <div class="logo"><img src="../HTML/imagenes/Invenprologo.png" alt=""></div>
+    <div class="header-iconos">
+      <span class="icon"><img src="../HTML/imagenes/chat.svg" alt="Mensajes" /></span>
+      <span class="icon"><img src="../HTML/imagenes/notificaciones.svg" alt="Notificaciones" /></span>
+      <span class="icon"><img src="../HTML/imagenes/user.svg" alt="Usuario" /></span>
+    </div>
+</header> 
+<!-- Se crea sesión de menús o navegación -->
+    <nav class="main-nav">
+      <a href="#" class="active">Inicio</a>
+      <div class="menu-desplegable">
+        <a href="#">Gestión de usuarios ▼</a>
+        <div class="submenus">
+          <a href="#" id="mostrar-crear-usuario">Crear usuario</a>
+          <a href="#" id="mostrar-consultar-usuario">Consultar usuario</a>
+          <a href="#" id="mostrar-modificar-usuario">Modificar usuario</a>
+          <a href="#" id="mostrar-eliminar-usuario">Eliminar usuario</a>
+        </div>
+      </div>
+      <div class="menu-desplegable">
+        <a href="#">Planificación de inventario ▼</a>
+        <div class="submenus">
+          <a href="#" id="mostrar-calendario-mes">Calendario mes</a>
+          <a href="#" id="mostrar-asignar-conteo">Asignar conteo</a>
+        </div>
+      </div>
+      <div class="menu-desplegable">
+        <a href="#">Informes ▼</a>
+        <div class="submenus">
+          <a href="#" id="mostrar-crear-informe">Crear informe</a>
+          <a href="#" id="mostrar-consultar-informe">Consultar informe</a>
+        </div>
+      </div>
+    </nav>
+
+    <!--espacio para contenido principal-->
+<div class="login-container">
+<p> <div id=inicio><H1>¡BIENVENIDO!</H1> <br>
+NOS ALEGRA QUE ESTÉS AQUÍ :D</div>
+</p>
+   <!--Ventana para crear usuario-->
+<div id="crear-usuario" class="crear-usuario">
+  <div>
+    <p>
+      <H1>CREAR USUARIO</H1><br>
+    </p>
+   <input type="text" id="nombre-usuario" placeholder="Nombres" style="width:90%;padding:8px;margin:12px 0;" />
+   <input type="text" id="apellido-usuario" placeholder="Apellidos" style="width:90%;padding:8px;margin:12px 0;" />
+   <input type="number" id="#NIT" placeholder="NIT ▼" style="width:90%;padding:8px;margin:12px 0;" />
+   <input type="email" id="email-usuario" placeholder="Correo electrónico" style="width:90%;padding:8px;margin:12px 0;" required />
+ 
+   <div class="botones">
+  <button class="opcion" onclick="seleccionar(this)">Usuario Contador</button>
+  <button class="opcion" onclick="seleccionar(this)">Usuario Jefe</button>
+</div>
+    <button class="error-btn" onclick="enviarRegistrar()">Registrar</button>
+    <br>    
+  </div>
+
+     <!--Ventana registro exitoso-->
+<div id="registro_exito" class="registro_exito">
+  <div>
+    <p>¡REGISTRO<br>
+       ÉXITOSO!</p>
+    <button onclick="cerrarRegistro()">Cerrar</button>
+  </div>
+</div>
+</div>
+
+   <!--Ventana para consultar usuario-->
+<div id="consultar-usuario" class="consultar-usuario">
+  <div>
+    <p>
+      <H1>CONSULTAR USUARIO</H1>
+    </p>
+
+ <div class="input-icon">
+  <input type="search" id="nombre-usuario" placeholder="Nombres" style="width:100%;padding:8px;margin:12px 0;" />
+  <span class="icono-final">
+    <img src="../HTML/imagenes/buscar.svg" alt="icono" />
+  </span>
+</div>
+
+ <div class="input-icon">
+  <input type="search" id="apellido-usuario" placeholder="Apellidos" style="width:100%;padding:8px;margin:12px 0;" />
+  <span class="icono-final">
+    <img src="../HTML/imagenes/buscar.svg" alt="icono" />
+  </span>
+</div>
+
+ <div class="input-icon">
+ <input type="search" id="#NIT" placeholder="NIT ▼" style="width:100%;padding:8px;margin:12px 0;" />
+  <span class="icono-final">
+    <img src="../HTML/imagenes/buscar.svg" alt="icono" />
+  </span>
+</div>
+
+    <div class="input-icon">
+<input type="search" id="email-usuario" placeholder="Correo electrónico" style="width:100%;padding:8px;margin:12px 0;" required />
+  <span class="icono-final">
+    <img src="../HTML/imagenes/buscar.svg" alt="icono" />
+  </span>
+</div>
+     
+   <div class="tabla-usuario">
+    <table>
+      <thead>
+        <tr>
+          <th>id|</th>
+          <th>Nombres|</th>
+          <th>Apellidos|</th>
+          <th>NIT|</th>
+          <th>Correo electrónico|</th>
+          <th>Rol</th>
+        </tr>
+      </thead>
+    </table>
+    </div> 
+  </div>
+</div>
+
+<!--Ventana para modificar usuario-->
+<div id="modificar-usuario" class="modificar-usuario">
+  <div>
+    <p>
+      <H1>MODIFICAR USUARIO</H1>
+    </p>
+
+ <div class="input-icon">
+  <input type="search" id="nombre-usuario" placeholder="Nombres" style="width:100%;padding:8px;margin:12px 0;" />
+  <span class="icono-final">
+    <img src="../HTML/imagenes/buscar.svg" alt="icono" />
+  </span>
+</div>
+
+ <div class="input-icon">
+  <input type="search" id="apellido-usuario" placeholder="Apellidos" style="width:100%;padding:8px;margin:12px 0;" />
+  <span class="icono-final">
+    <img src="../HTML/imagenes/buscar.svg" alt="icono" />
+  </span>
+</div>
+
+ <div class="input-icon">
+ <input type="search" id="#NIT" placeholder="NIT ▼" style="width:100%;padding:8px;margin:12px 0;" />
+  <span class="icono-final">
+    <img src="../HTML/imagenes/buscar.svg" alt="icono" />
+  </span>
+</div>
+
+    <div class="input-icon">
+<input type="search" id="email-usuario" placeholder="Correo electrónico" style="width:100%;padding:8px;margin:12px 0;" required />
+  <span class="icono-final">
+    <img src="../HTML/imagenes/buscar.svg" alt="icono" />
+  </span>
+</div>
+     
+   <div class="tabla-usuario">
+    <table>
+      <thead>
+        <tr>
+          <th>id|</th>
+          <th>Nombres|</th>
+          <th>Apellidos|</th>
+          <th>NIT|</th>
+          <th>Correo electrónico|</th>
+          <th>Rol</th>
+        </tr>
+      </thead>
+    </table>
+    </div>   
+           <button class="error-btn" >Guardar cambios</button>    
+  </div>
+</div>
+
+<!--Ventana para eliminar usuario-->
+<div id="eliminar-usuario" class="eliminar-usuario">
+  <div>
+    <p>
+      <H1>ELIMINAR USUARIO</H1>
+    </p>
+
+ <div class="input-icon">
+ <input type="search" id="#NIT" placeholder="NIT" style="width:100%;padding:8px;margin:12px 0;" />
+  <span class="icono-final">
+    <img src="../HTML/imagenes/buscar.svg" alt="icono" />
+  </span>
+</div>
+    
+  <div class="eliminar-usuario-info">
+    id: <br>
+    Nombres: <br>
+    Apellidos: <br>
+    NIT: <br>
+    Correo electrónico: <br>
+    Rol: <br>
+  </div>
+           <button class="error-btn-red" onclick="eliminarRegistro()">Eliminar</button>    
+  </div>
+</div>
+  <!--Ventana confirmacion eliminar-->
+<div id="confirmacion-eliminar" class="confirmacion-eliminar">
+      <div>
+  <p>¿Estás seguro de que deseas eliminar?</p>
+  <button class="error-btn-red" onclick="confirmarEliminar()">Si, eliminar</button>
+  <button class="error-btn" onclick="cerrarConfirmacion()">No, mejor no.</button>
+</div>
+</div>
+
+<!--Ventana para calendario mes-->
+<div id="calendario-mes" class="calendario-mes">
+      <p>
+      <H1>CALENDARIO MES</H1>
+    </p><br>
+    <div class="imagen-calendario">
+   <img src="../HTML/imagenes/CalendarioMes.png"/>
+   </div>
+</div>
+
+<!--Ventana para asignar conteo-->
+<div id="asignar-conteo" class="asignar-conteo">
+  <p>
+  <H1>ASIGNAR CONTEO</H1><br>
+  <div class="input-icon-asignar">
+    <span class="icono-final">
+      <img src="../HTML/imagenes/regresar.svg" alt="icono" />
+    </span> DÍA: ______ MES: ______ AÑO: ______
+  </div>
+  </p>
+  <div id="asignar-conteo-form" class="asignar-conteo-form">
+    <div class="input-icon">
+      <input type="number" id="producto" placeholder="Producto ▼" style="width:50%;padding:8px;margin:4px 0;" />
+    </div>
+
+    <div class="input-icon">
+      <input type="text" id="Frecuencia" placeholder="Frecuencia ▼" style="width:50%;padding:8px;margin:4px 0;" />
+    </div>
+
+    <div class="input-icon">
+      <input type="text" id="Contador" placeholder="Contador ▼" style="width:50%;padding:8px;margin:4px 0;" />
+      </div>
+      <button class="error-btn" onclick="asignarConteo()">Asignar conteo</button>
+      <div class="asignar-conteo-info">
+        id toma: <br>
+        Ref producto: <br>
+        DESCRIPCION DEL PRODUCTO: <br>
+        FRECUENCIA: <br>
+        CONTADOR ASIGNADO: <br>
+        <button class="error-btn-red" onclick="eliminarRegistro()">Eliminar</button>
+        <button class="error-btn" onclick="cerrarConfirmacion()">Editar</button>
+      </div>
+      <div class="asignar-conteo-info">
+        id toma: <br>
+        Ref producto: <br>
+        DESCRIPCION DEL PRODUCTO: <br>
+        FRECUENCIA: <br>
+        CONTADOR ASIGNADO: <br>
+        <button class="error-btn-red" onclick="eliminarRegistro()">Eliminar</button>
+        <button class="error-btn" onclick="cerrarConfirmacion()">Editar</button>
+      </div>  
+      </div>
+  </div>
+  <!--Ventana para crear informes-->
+  <div id="crear-informe" class="crear-informe">
+    <p>
+    <H1>CREAR INFORME</H1>
+    </p>
+  
+    <input type="text" id="Tipo-de-informe" placeholder="Tipo de informe ▼" style="width:90%;padding:8px;margin:12px 0;" />
+    <input type="date" id="Fecha-inicial" placeholder="Fecha inicial" style="width:90%;padding:8px;margin:12px 0;" />
+    <input type="date" id="Fecha-final" placeholder="Fecha final" style="width:90%;padding:8px;margin:12px 0;" />
+    <input type="text" id="Nombre-del-informe" placeholder="Nombre del informe" style="width:90%;padding:8px;margin:12px 0;" />
+     <button class="error-btn" >Crear informe</button> 
+  </div>   
+          
+  <!--Ventana para consultar informes-->
+<div id="consultar-informe" class="consultar-informe">
+  <p>
+  <H1>CONSULTAR INFORME</H1><br>
+  </p>
+      <div class="consultar-informe-info">
+        id informe: <br>
+        Tipo: <br>
+        Nombre del informe: <br>
+        Fecha de creacion: <br>
+        <button class="error-btn-red" onclick="eliminarRegistro()">Eliminar</button>
+        <button class="error-btn" onclick="cerrarConfirmacion()">Editar</button>
+      </div>
+      <div class="consultar-informe-info">
+        id informe: <br>
+        Tipo: <br>
+        Nombre del informe: <br>
+        Fecha de creacion: <br>
+        <button class="error-btn-red" onclick="eliminarRegistro()">Eliminar</button>
+        <button class="error-btn" onclick="cerrarConfirmacion()">Editar</button>
+      </div>  
+   
+  </div>
+
+</div> <!--ultimodivcontenedor-->
+<footer class="inicio-footer">© 2025 Todos los derechos reservados | InvenPro</footer>
+<script src="../JS/administrador.js"></script>
+</body>
+</html>

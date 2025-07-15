@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvenPro - HomeContador</title>
+  <link rel="stylesheet" href="../CSS/roles.css" />
+  <!--Se importa la fuente Kode Kono-->
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="inicio-header"> <div class="logo"><img src="../HTML/imagenes/Invenprologo.png" alt=""></div>
+    <div class="header-iconos">
+      <span class="icon"><img src="../HTML/imagenes/chat.svg" alt="Mensajes" /></span>
+      <span class="icon"><img src="../HTML/imagenes/notificaciones.svg" alt="Notificaciones" /></span>
+      <span class="icon"><img src="../HTML/imagenes/user.svg" alt="Usuario" /></span>
+    </div>
+</header> 
+<!-- Se crea sesión de menús o navegación -->
+    <nav class="main-nav">
+      <a href="#" class="active">Inicio</a>
+        <a id="mostrar-registrar-conteo" href="#">Registrar conteo</a>
+    </nav>
+
+    <!--espacio para contenido principal-->
+ <div class="login-container">
+<p> <div id=inicio><H1>¡BIENVENIDO!</H1> <br>
+NOS ALEGRA QUE ESTÉS AQUÍ :D</div>
+</p>
+   <!--Ventana conteos asignados-->
+<div id="registrar-conteo" class="registrar-conteo">
+  <p>
+  <H1>HOY DD/MM/YYYY TIENES ASIGNADO LOS SIGUIENTES CONTEOS:</H1><br>
+  </p>
+  <div class="registrar-conteo-form">
+        <div class="registrar-conteo-info">
+        id toma: <br>
+        Ref producto: <br>
+        Descripción de producto: <br>
+        Status: <br>
+        <button id="btn-ingreso-conteo" class="error-btn" onclick="registrarConteo()">Ingresar</button>
+      </div>
+      <div class="registrar-conteo-info">
+        id toma: <br>
+        Ref producto: <br>
+        Descripción de producto: <br>
+        Status: <br>
+        <button id="btn-ingreso-conteo" class="error-btn" onclick="registrarConteo()">Ingresar</button>
+      </div>  
+  </div>
+  </div>
+  <!--Ventana para registrar conteo-->
+  <div id="ingreso-registrar-conteo">
+    <div class="input-icon-asignar">
+      <span class="icono-final">
+        <img src="../HTML/imagenes/regresar.svg" alt="icono" />
+      </span> ID TOMA:<br>
+      REF:<br>
+      DESCRIPCIÓN:<br>
+    </div>
+    <div class="input-icon">
+      <input type="number" id="cantidad" placeholder="Cantidad" style="width:50%;padding:8px;margin:4px 0;" />
+    </div>
+    <div class="input-icon">
+      <input type="text" id="comentarios" placeholder="Comentarios" style="width:50%;padding:8px;margin:4px 0;" />
+    </div>
+    <button class="error-btn">Registrar</button>
+  </div>
+
+  </div><!--ultimodivcontenedor-->
+</body>
+    <footer class="inicio-footer">© 2025 Todos los derechos reservados | InvenPro</footer>
+  <script src="../JS/contador.js"></script>
+</body>
+</html>

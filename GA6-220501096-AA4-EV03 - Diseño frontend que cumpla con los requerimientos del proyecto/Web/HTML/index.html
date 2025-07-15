@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvenPro - Inicio de Sesión</title>
+  <link rel="stylesheet" href="../CSS/index.css" />
+  <!--Se importa la fuente Kode Kono-->
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="inicio-header">  </header>
+  <div class="login-container">
+    <div class="logo"><img src="../HTML/imagenes/Invenprologo.png" alt=""></div>
+    <form class="login-form">
+      <label for="email">Usuario</label>
+      <input type="email" id="email" placeholder="Correo electrónico" required />
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="Contraseña" required />
+<button type="submit" class="error-btn">Iniciar sesión</button>
+
+      <div class="links">
+        <a href="#">Olvidé mi contraseña</a>
+      </div>
+      </form>
+     <!--Ventana para mensaje de error en caso de email o contraseña errados--> 
+     <div id="error-message" class="error-message">
+  <div>
+    <p><strong>Oops! Algo salió mal</strong><br>
+    Parece que hemos encontrado algunos errores:</p>
+    <ol>
+      <li>Verifica tu conexión a internet e inténtalo de nuevo.</li>
+      <li>Tu sesión ha expirado. Por favor, inicia sesión nuevamente.</li>
+      <li>Los datos ingresados no son válidos.</li>
+    </ol>
+    <p>Si el problema persiste, contacta a nuestro equipo de soporte técnico.
+    <button class="error-btn" onclick="ocultarError()">Regresar</button></p>
+  </div>
+</div>
+
+   <!--Ventana para restaurar contraseña "olvide mi contraseña"-->
+<div id="recovery-modal" class="recovery-modal">
+  <div>
+    <p>
+      Por favor, ingrese su correo electrónico.<br>
+      Recibirá un enlace con el cual podrá restablecer su contraseña.
+    </p>
+    <input type="email" id="recovery-email" placeholder="Ingrese su correo electronico" style="width:90%;padding:8px;margin:12px 0;" />
+    <button class="error-btn" onclick="enviarRecuperacion()">Enviar</button>
+    <br>
+    <button class="error-btn" style="background:#888;margin-top:10px;" onclick="cerrarRecuperacion()">Cancelar</button>
+  </div>
+</div>
+
+   <!--Ventana para restaurar contraseña-->
+<div id="recovery-modal2" class="recovery-modal2">
+  <div>
+    <p>
+      Cree una nueva contraseña a continuación.<br>
+      debe tener como mínimo 6 caracteres, una mayúscula,<br>
+      un número y un símbolo.
+    </p>
+   <input type="password" id="new-password" placeholder="Nueva contraseña" style="width:90%;padding:8px;margin:12px 0;" />
+   <input type="password-2" id="new-password-2" placeholder="Confirmar nueva contraseña " style="width:90%;padding:8px;margin:12px 0;" />
+    <button class="error-btn" onclick="enviarRestablecer()">Restablecer</button>
+    <br>
+  </div>
+</div>
+
+   <!--Ventana contraseña se restablecio con exito-->
+<div id="restablecido_exito" class="restablecido_exito">
+  <div>
+    <p>
+      LA CONTRASEÑA<br>
+      SE RESTABLECIO<br>
+      CON EXTIO.<br>
+      </p>
+      <button class="error-btn" onclick="cerrarRecuperacion()">Regresar</button>
+  </div>
+</div>
+
+    <footer class="inicio-footer">© 2025 Todos los derechos reservados | InvenPro</footer>
+  <script src="../JS/index.js"></script>
+</body>
+</html>

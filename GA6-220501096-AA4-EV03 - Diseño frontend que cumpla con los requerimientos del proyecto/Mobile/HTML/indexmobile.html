@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvenPro - Inicio Móvil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/indexmobile.css" />
+</head>
+<body>
+  <div class="mobile-wrapper">
+    <div class="logo-mobile">
+      <img src="../HTML/imagenes/Invenprologo.png" alt="Logo InvenPro" />
+    </div>
+    <form class="form-mobile">
+      <label for="email">Usuario</label>
+      <input type="email" id="email" placeholder="Correo electrónico" required />
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="Contraseña" required />
+
+      <button type="submit" class="btn-mobile">Iniciar sesión</button>
+      <div class="link-mobile">
+        <a href="#" onclick="abrirRecuperacion()">Olvidé mi contraseña</a>
+      </div>
+    </form>
+
+<!-- Ventana para mensaje de error en caso de email o contraseña errados -->
+<div id="error-message" class="error-message">
+  <div class="error-contenido">
+    <p><strong>Oops! Algo salió mal</strong><br>
+      Parece que hemos encontrado algunos errores:
+    </p>
+    <ol>
+      <li>Verifica tu conexión a internet e inténtalo de nuevo.</li>
+      <li>Tu sesión ha expirado. Por favor, inicia sesión nuevamente.</li>
+      <li>Los datos ingresados no son válidos.</li>
+    </ol>
+    <p>Si el problema persiste, contacta a nuestro equipo de soporte técnico.</p>
+    <button class="btn-mobile" onclick="ocultarError()">Regresar</button>
+  </div>
+</div>
+
+    <!--Ingresar correo para recuperación -->
+<div id="modal-recuperacion" class="modal-mobile">
+  <div class="modal-box">
+    <p>Ingresa tu correo electrónico. Te enviaremos un enlace para restablecer tu contraseña.</p>
+    <input type="email" id="email-recuperacion" placeholder="Correo electrónico" />
+    <button onclick="enviarRecuperacion()">Enviar</button>
+    <button class="cancelar" onclick="cerrarModal()">Cancelar</button>
+  </div>
+</div>
+
+<!-- Crear nueva contraseña -->
+<div id="modal-nueva-clave" class="modal-mobile">
+  <div class="modal-box">
+    <p>Crea una nueva contraseña con mínimo 6 caracteres, una mayúscula, un número y un símbolo.</p>
+    <input type="password" id="nueva-clave" placeholder="Nueva contraseña" />
+    <input type="password" id="confirmar-clave" placeholder="Confirmar contraseña" />
+    <button onclick="restablecerClave()">Restablecer</button>
+  </div>
+</div>
+
+<!-- Éxito al restablecer -->
+<div id="modal-exito" class="modal-mobile">
+  <div class="modal-box">
+    <p>¡Contraseña restablecida con éxito!</p>
+    <button onclick="cerrarTodo()">Regresar</button>
+  </div>
+</div>
+
+
+  </div>
+
+  <script src="../JS/indexmobile.js"></script>
+</body>
+</html>

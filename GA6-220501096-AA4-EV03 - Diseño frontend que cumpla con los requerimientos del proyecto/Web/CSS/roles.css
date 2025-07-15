@@ -1,0 +1,305 @@
+* {
+  font-family: 'Kode Mono', monospace !important;
+}
+
+.inicio-header {
+background: #4058F5;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  z-index: 1000;
+}
+
+.header-iconos {  
+  display: flex;
+  justify-content: center;
+  padding-right: 1.0rem;
+  gap: 1.2rem;
+}
+
+.header-iconos .icon img {
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 60px;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6f8 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-nav {
+  position: absolute;
+    top: 11%;
+    width: 100%;
+  display:flex ;
+  align-items: center;
+  left: 10px;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: #000000;
+  background: #FFF6F6;
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  background: #123AFF;
+  color: #FFF6F6;
+}
+
+.menu-desplegable {
+  position: relative;
+  display: inline-block;
+}
+
+.submenus {
+  display: none;
+  position: absolute;
+  background: #FFF6F6;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  z-index: 1001;
+  margin-top: 6px;
+}
+
+.submenus a {
+  color: #000000;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 6px;
+}
+
+.submenus a:hover {
+  background: #123AFF;
+  color: #FFF6F6;
+}
+
+.menu-desplegable:hover .submenus {
+  display: block;
+}
+
+.login-container{
+  margin-top: 70px;
+  background-color: #FFF6F6;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.tabla-usuario,
+.eliminar-usuario-info,
+.asignar-conteo-info,
+.consultar-informe-info,
+.registrar-conteo-info  {
+  background-color: #ededed;
+  padding: 1rem;
+  border-radius: 2px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  text-align: left;
+  overflow-x: auto;
+  }
+.tabla-usuario table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.opcion {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #D3D3D3 ;
+  color: #333;
+  cursor: pointer;
+}
+
+.opcion.seleccionado {
+  background-color: #3b3b3b77;
+  border:#000000 0.5px solid; 
+  font-weight:900;
+    color: #FFF6F6;
+}
+
+.error-btn {
+  font-family: 'kode mono', monospace;
+  background: #4058F5;
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+.error-btn:hover {
+  background: #2e3ebd;
+}
+
+.error-btn-red {
+  font-family: 'kode mono', monospace;
+  background: #FF0000;
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+.error-btn-red:hover {
+  background: #890000;
+}
+
+.registro_exito,
+.confirmacion-eliminar {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.35);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+.registro_exito.active,
+.confirmacion-eliminar.active {
+  display: flex;
+}
+.registro_exito> div,
+.confirmacion-eliminar > div {
+  background: #f5f5f5;
+  border: 1px solid #333;
+  border-radius: 6px;
+  max-width: 400px;
+  padding: 32px 20px;
+  text-align: center;
+  font-family: 'Kode Mono', monospace;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.input-icon {
+  position: relative;
+  width: 90%;
+  margin: 12px 0;
+}
+
+.input-icon input {
+  width: 100%;
+  padding-right: 36px;
+  padding-left: 8px;
+  box-sizing: border-box;
+  height: 38px;
+}
+
+.input-icon .icono-final {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input-icon .icono-final img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+
+.eliminar-usuario-info {
+justify-content: first baseline;
+}
+
+.calendario-mes {
+  margin-top: 2px;
+  padding: 2px;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+
+.calendario-mes img {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+}
+.imagen-calendario {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.input-icon-asignar{
+  position: relative;
+  align-items: center;
+  width: 90%;
+  margin:auto;
+}
+
+.input-icon-asignar .icono-final {
+  position: absolute;
+  left: 10px;
+}
+
+.input-icon-asignar .icono-final img {
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+}
+
+.asignar-conteo-form{
+ columns:2;
+}
+
+.registrar-conteo-form{
+display:flexbox; 
+}
+
+
+
+
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+.inicio-footer {
+  background: #4058F5;
+  color: #FFF6F6;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}

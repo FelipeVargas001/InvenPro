@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvenPro - HomeJefe</title>
+  <link rel="stylesheet" href="../CSS/roles.css" />
+  <!--Se importa la fuente Kode Kono-->
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="inicio-header"> <div class="logo"><img src="../HTML/imagenes/Invenprologo.png" alt=""></div>
+    <div class="header-iconos">
+      <span class="icon"><img src="../HTML/imagenes/chat.svg" alt="Mensajes" /></span>
+      <span class="icon"><img src="../HTML/imagenes/notificaciones.svg" alt="Notificaciones" /></span>
+      <span class="icon"><img src="../HTML/imagenes/user.svg" alt="Usuario" /></span>
+    </div>
+</header> 
+<!-- Se crea sesión de menús o navegación -->
+<nav class="main-nav">
+  <a href="#" class="active">Inicio</a>
+      <div class="menu-desplegable">
+        <a href="#">Informes ▼</a>
+        <div class="submenus">
+          <a href="#" id="mostrar-crear-informe">Crear informe</a>
+          <a href="#" id="mostrar-consultar-informe">Consultar informe</a>
+        </div>
+      </div>
+</nav>
+<div class="login-container">
+  <p>
+  <div id=inicio>
+    <H1>¡BIENVENIDO!</H1> <br>
+    NOS ALEGRA QUE ESTÉS AQUÍ :D
+  </div>
+  </p>
+
+  <!--Ventana para crear informes-->
+  <div id="crear-informe" class="crear-informe">
+    <p>
+    <H1>CREAR INFORME</H1>
+    </p>
+
+    <input type="text" id="Tipo-de-informe" placeholder="Tipo de informe ▼"
+      style="width:90%;padding:8px;margin:12px 0;" />
+    <input type="date" id="Fecha-inicial" placeholder="Fecha inicial" style="width:90%;padding:8px;margin:12px 0;" />
+    <input type="date" id="Fecha-final" placeholder="Fecha final" style="width:90%;padding:8px;margin:12px 0;" />
+    <input type="text" id="Nombre-del-informe" placeholder="Nombre del informe"
+      style="width:90%;padding:8px;margin:12px 0;" />
+    <button class="error-btn">Crear informe</button>
+  </div>
+
+  <!--Ventana para consultar informes-->
+  <div id="consultar-informe" class="consultar-informe">
+    <p>
+    <H1>CONSULTAR INFORME</H1><br>
+    </p>
+    <div class="consultar-informe-info">
+      id informe: <br>
+      Tipo: <br>
+      Nombre del informe: <br>
+      Fecha de creacion: <br>
+      <button class="error-btn-red" onclick="eliminarRegistro()">Eliminar</button>
+      <button class="error-btn" onclick="cerrarConfirmacion()">Editar</button>
+    </div>
+    <div class="consultar-informe-info">
+      id informe: <br>
+      Tipo: <br>
+      Nombre del informe: <br>
+      Fecha de creacion: <br>
+      <button class="error-btn-red" onclick="eliminarRegistro()">Eliminar</button>
+      <button class="error-btn" onclick="cerrarConfirmacion()">Editar</button>
+    </div>
+  </div>
+  <!--Ventana confirmacion eliminar-->
+<div id="confirmacion-eliminar" class="confirmacion-eliminar">
+      <div>
+  <p>¿Estás seguro de que deseas eliminar?</p>
+  <button class="error-btn-red" onclick="confirmarEliminar()">Si, eliminar</button>
+  <button class="error-btn" onclick="cerrarConfirmacion()">No, mejor no.</button>
+</div>
+</div>
+</div> <!--ultimodivcontenedor-->
+
+    <footer class="inicio-footer">© 2025 Todos los derechos reservados | InvenPro</footer>
+  <script src="../JS/jefe.js"></script>
+</body>
+</html>
